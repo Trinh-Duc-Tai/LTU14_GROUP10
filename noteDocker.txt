@@ -1,0 +1,13 @@
+mở Docker Quickstart Terminal rồi để tự chạy
+chạy câu lệnh:
+docker run --net=host -ti ubuntu:16.04 bash
+//Ctrl+C hoặc Ctrl+D hoặc exit để thoát 
+Để docker chạy được trên win 10 thì phải chạy Hyper-V
+chạy lệnh trên powershell: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+https://codeaholicguy.com/2018/08/30/dua-nghich-voi-docker-trong-5-phut/
+https://congdongjava.com/forum/threads/gi%E1%BB%9Bi-thi%E1%BB%87u-v%E1%BB%81-spring-websocket.22035/
+https://techblog.vn/su-dung-java-tao-websocket-de-tao-ung-dung-chat
+
+
+
