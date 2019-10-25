@@ -1,0 +1,3 @@
+git remote add nguyenminhthuy https://github.com/Trinh-Duc-Tai/project-IT4883.git
+git log --oneline --decorate
+git branch nguyenminhthuy
