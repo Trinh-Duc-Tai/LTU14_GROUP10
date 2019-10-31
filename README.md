@@ -9,3 +9,5 @@ git push -u huyen note //up
 2. git add .
 3. git commit -m "chú thích"
 4. git push -u huyen note 
+git checkout maithithuhuyen
+git push -u huyen maithithuhuyen
