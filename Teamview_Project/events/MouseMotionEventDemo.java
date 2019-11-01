@@ -90,5 +90,17 @@ public class MouseMotionEventDemo extends JPanel implements MouseMotionListener 
 		setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 	}
 
-	
+	void eventOutput(String eventDescription, MouseEvent e) {
+		textArea.append(eventDescription + " (" + e.getX() + "," + e.getY() + ")" + " detected on "
+				+ e.getComponent().getClass().getName() + NEWLINE);
+		textArea.setCaretPosition(textArea.getDocument().getLength());
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		eventOutput("Mouse moved", e);
+	}
+
+	public void mouseDragged(MouseEvent e) {
+		eventOutput("Mouse dragged", e);
+	}
 }
