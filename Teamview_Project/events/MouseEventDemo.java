@@ -99,5 +99,21 @@ public class MouseEventDemo extends JPanel
                 + e.getClickCount() + ")", e);
     }
     
+    public void mouseReleased(MouseEvent e) {
+        eventOutput("Mouse released (# of clicks: "
+                + e.getClickCount() + ")", e);
+    }
     
+    public void mouseEntered(MouseEvent e) {
+        eventOutput("Mouse entered", e);
+    }
+    
+    public void mouseExited(MouseEvent e) {
+        eventOutput("Mouse exited", e);
+    }
+    
+    public void mouseClicked(MouseEvent e) {
+        eventOutput("Mouse clicked (# of clicks: "
+                + e.getClickCount() + ")", e);
+    }
 }
