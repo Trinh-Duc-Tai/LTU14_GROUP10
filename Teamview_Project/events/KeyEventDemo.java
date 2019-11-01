@@ -171,5 +171,7 @@ public class KeyEventDemo extends JFrame implements KeyListener, ActionListener 
 		displayArea.append(keyStatus + newline + "    " + keyString + newline + "    " + modString + newline + "    "
 				+ actionString + newline + "    " + locationString + newline);
 		displayArea.setCaretPosition(displayArea.getDocument().getLength());
+
+        
 	}
 }
