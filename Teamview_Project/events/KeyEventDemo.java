@@ -156,7 +156,17 @@ public class KeyEventDemo extends JFrame implements KeyListener, ActionListener 
 
 		String locationString = "key location: ";
 		int location = e.getKeyLocation();
-		
+		if (location == KeyEvent.KEY_LOCATION_STANDARD) {
+			locationString += "standard";
+		} else if (location == KeyEvent.KEY_LOCATION_LEFT) {
+			locationString += "left";
+		} else if (location == KeyEvent.KEY_LOCATION_RIGHT) {
+			locationString += "right";
+		} else if (location == KeyEvent.KEY_LOCATION_NUMPAD) {
+			locationString += "numpad";
+		} else { // (location == KeyEvent.KEY_LOCATION_UNKNOWN)
+			locationString += "unknown";
+		}
 
 		displayArea.append(keyStatus + newline + "    " + keyString + newline + "    " + modString + newline + "    "
 				+ actionString + newline + "    " + locationString + newline);
