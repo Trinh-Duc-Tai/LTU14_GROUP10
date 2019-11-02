@@ -14,7 +14,19 @@ public class KeyCapture implements KeyListener {
 		gt = s;
 	}
 
-	
+	public void keyPressed(KeyEvent e) {
+		int a = e.getKeyCode();
+		try {
+
+			if (!KeyMap.isControl(a))
+				gt.type(a);
+			else
+				gt.keypress(a);
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
