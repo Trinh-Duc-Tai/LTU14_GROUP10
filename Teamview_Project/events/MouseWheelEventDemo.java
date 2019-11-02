@@ -91,7 +91,13 @@ public class MouseWheelEventDemo extends JPanel
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
      
-   
+    //Append to the text area and make sure the new text is visible.
+    void eventOutput(String eventDescription, MouseWheelEvent e) {
+        textArea.append(e.getComponent().getClass().getName()
+        + ": "
+                + eventDescription);
+        textArea.setCaretPosition(textArea.getDocument().getLength());
+    }
      
     public void mouseWheelMoved(MouseWheelEvent e) {
         String message;
