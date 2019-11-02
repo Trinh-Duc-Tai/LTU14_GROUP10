@@ -28,7 +28,13 @@ public class MouseCapture implements MouseListener {
 		}
 		
 	}
-	
+	public void mousePressed(MouseEvent e) {
+		try {
+			gt.mouseclick(e.getButton(), e.getClickCount());
+		} catch (Exception e2) {
+			e2.printStackTrace();	
+		}
+	}
 	public void mouseEntered(MouseEvent e) {
 		
 		//no thinh to do
