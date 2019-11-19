@@ -24,7 +24,13 @@ public class Screen implements Runnable {
 
 	}
 
-	
+	public Screen() {
+		try {
+			rb = new Robot();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	public void run() {
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
