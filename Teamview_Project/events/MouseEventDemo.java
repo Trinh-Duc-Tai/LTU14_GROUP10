@@ -70,7 +70,24 @@ public class MouseEventDemo extends JPanel
         frame.setVisible(true);
     }
     
-    
+    public MouseEventDemo() {
+        super(new GridLayout(0,1));
+        blankArea = new BlankArea(Color.YELLOW);
+        add(blankArea);
+        textArea = new JTextArea();
+        textArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(200, 75));
+        add(scrollPane);
+        
+        //Register for mouse events on blankArea and the panel.
+        blankArea.addMouseListener(this);
+        addMouseListener(this);
+        setPreferredSize(new Dimension(450, 450));
+        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+    }
     
     void eventOutput(String eventDescription, MouseEvent e) {
         textArea.append(eventDescription + " detected on "
