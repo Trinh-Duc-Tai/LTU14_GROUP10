@@ -18,3 +18,5 @@ public class Can extends Canvas {
 		g.drawImage(i, 0, 0, null);
 	}
 }
+git remote show origin
+git add .
