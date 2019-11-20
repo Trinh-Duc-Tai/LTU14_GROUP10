@@ -19,6 +19,19 @@ public class GetScreen implements Runnable {
 	static boolean run = true;
 	String host;
 
+	public GetScreen(JPanel jp, Image im, String s) {
+		try {
+			System.out.println("start");
+			panel = jp;
+			image = im;
+			ser = new ServerSocket(port);
+			host = s;
+		} catch (IOException e) {
+			System.out.println("loi port");
+			e.printStackTrace();
+		}
+	}
+
 	public void run() {
 		int sleep = 1000 / frame;
 		try {
