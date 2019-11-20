@@ -21,4 +21,11 @@ public class BlankArea extends JLabel {
 		setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 
+	public Dimension getMinimumSize() {
+		return minSize;
+	}
+
+	public Dimension getPreferredSize() {
+		return minSize;
+	}
 }
