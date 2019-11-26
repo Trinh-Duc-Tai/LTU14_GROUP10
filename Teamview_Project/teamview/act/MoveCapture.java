@@ -12,7 +12,19 @@ public class MoveCapture implements MouseMotionListener {
 	Giaotiep gt;
 	JPanel jp;
 
-	
+	public MoveCapture(JPanel p, Giaotiep s) {
+		gt = s;
+		jp = p;
+		try {
+			int a[] = gt.size();
+			w = a[0];
+			h = a[1];
+		} catch (Exception e) {
+			System.out.println("loi khoi tao movecaptre");
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		int x = e.getX(), y = e.getY();
