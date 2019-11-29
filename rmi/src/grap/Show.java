@@ -28,7 +28,7 @@ public class Show extends JFrame implements ActionListener {
 		this.setVisible(true);
 		this.setResizable(false);
 		this.setSize(400, 300);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initser();
 		initclient();
 		JMenuBar menuBar = new JMenuBar();

@@ -37,7 +37,8 @@ public class GetScreen implements Runnable {
 		try {
 			while (run) {
 				Socket s = ser.accept();
-				if (s.getLocalAddress().getHostAddress() .equals(host)) {
+				if (s.getLocalAddress().getHostAddress() .equals(host)||host.equals("127.0.0.1") )
+				{
 					BufferedImage img = ImageIO.read(ImageIO.createImageInputStream(s.getInputStream()));
 					image = img;
 					image = image.getScaledInstance(panel.getWidth(), panel.getHeight(), Image.SCALE_SMOOTH);
