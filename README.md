@@ -1,15 +1,11 @@
 ﻿# project-IT4883
-echo "# project-IT4883" >> README.md
+de tich hop code
 
-git init
+tren server goi new App(String s)  
 
-git add README.md
+tren client goi Rmiserver
 
-git commit -m "first commit"
+cong rmi : 8888
 
-git remote add origin https://github.com/Trinh-Duc-Tai/project-IT4883.git
+cong socket ket noi man hinh : 6677 
 
-git push -u origin master
-
-git remote show origin
-git add .
