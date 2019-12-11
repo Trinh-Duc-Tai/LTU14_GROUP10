@@ -7,9 +7,12 @@ import javax.swing.JPanel;
 
 import remote.Giaotiep;
 
+// bat cac sư kiện khi chuột di chuyển 
 public class MoveCapture implements MouseMotionListener {
 	int h, w;
 	Giaotiep gt;
+	//class điểu kiển rmi
+	
 	JPanel jp;
 
 	public MoveCapture(JPanel p, Giaotiep s) {
@@ -25,12 +28,13 @@ public class MoveCapture implements MouseMotionListener {
 		}
 	}
 
-	@Override
+	// bắt sử kiện kéo chuột  chuột 
 	public void mouseDragged(MouseEvent e) {
 		int x = e.getX(), y = e.getY();
 		int p = x * w / jp.getWidth(), q = y * h / jp.getHeight();
 		try {
 			gt.move(p, q);
+			// di chuyển con chuột 
 			Thread.sleep(15);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
@@ -39,12 +43,13 @@ public class MoveCapture implements MouseMotionListener {
 
 	}
 
-	@Override
+	// bắt sữ di chuyển chuột
 	public void mouseMoved(MouseEvent e) {
 		int x = e.getX(), y = e.getY();
 		int p = x * w / jp.getWidth(), q = y * h / jp.getHeight();
 		try {
 			gt.move(p, q);
+			// di chuyển con chuột 
 			Thread.sleep(15);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block

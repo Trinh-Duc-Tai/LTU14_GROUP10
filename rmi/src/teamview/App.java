@@ -25,7 +25,8 @@ import teamview.act.WheelCapture;
  * author: amneiht - dang cong can
  */
 public class App extends JFrame {
-	public static String status="chua co gi";
+	public static String status = "chua co gi";
+
 	public static void main(String[] args) {
 		new App("127.0.0.1");
 	}
@@ -34,15 +35,15 @@ public class App extends JFrame {
 
 	public App(String s) {
 		trmi = GetRmi.get(s);
+		// lấy class rmi
 		if (trmi != null) {
-			status="ok";
+			status = "ok";
 			init();
-			GetScreen.run=true;
+			GetScreen.run = true;
 			GetScreen sc = new GetScreen(this.panel, this.image, s);
 			new Thread(sc).start();
-		}else
-		{
-			status="err";
+		} else {
+			status = "err";
 		}
 	}
 
@@ -53,6 +54,9 @@ public class App extends JFrame {
 		new GetScreen(this.panel, this.image, "localhost");
 	}
 
+	/**
+	 * khơi tao thông tin
+	 */
 	private void init() {
 
 		JMenuBar menuBar = new JMenuBar();
@@ -65,14 +69,14 @@ public class App extends JFrame {
 		JTextField textField = new JTextField();
 		textField.setColumns(10);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		addKeyListener(new KeyCapture(trmi));
-		addMouseWheelListener(new WheelCapture(trmi));
-		panel = new JPanel();
-		panel.setFocusable(true);
 
-		panel.addMouseListener(new MouseCapture(trmi));
-		panel.addMouseMotionListener(new MoveCapture(panel, trmi));
+		addKeyListener(new KeyCapture(trmi)); // thêm bộ nghe sự kiện bàn phím
+		addMouseWheelListener(new WheelCapture(trmi));// thêm bộ nghe sự kiện lăn chuột
+		panel = new JPanel();
+		panel.setFocusable(true);// cho phép truy cập
+
+		panel.addMouseListener(new MouseCapture(trmi));// thêm bộ nghe sự kiện chuột
+		panel.addMouseMotionListener(new MoveCapture(panel, trmi));// thêm bộ nghe sự kiện di chuyển chuột
 
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.TRAILING).addGroup(groupLayout
@@ -108,7 +112,8 @@ public class App extends JFrame {
 			graphics.dispose();
 		}
 	}
-//public exit()
+
+	// public exit()
 	protected void paindraw() {
 		try {
 			System.out.println(panel.getWidth() + "  " + panel.getHeight());

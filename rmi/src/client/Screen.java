@@ -11,7 +11,7 @@ import java.net.Socket;
 
 import javax.imageio.ImageIO;
 
-public class Screen implements Runnable {
+public class Screen implements Runnable  {
 	int port = 6677;
 	String host = "localhost";
 	static boolean run = true;
@@ -34,17 +34,25 @@ public class Screen implements Runnable {
 
 	public void run() {
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		// tạo đối tượng dismension chứa thông tin về kích thước màn hình
 		Rectangle rec = new Rectangle(dim);
+		// khởi tạo đối tượng Rectangle 
 		int sleep = 1000 / 15;
 		int h = dim.height / 2;
 		int w = dim.width / 2;
 		while (run) {
 			try {
 				Socket s = new Socket(host, port);
+				// tao socket kết nối đến máy điều khiển
 				BufferedImage image = rb.createScreenCapture(rec);
+				// tạo image từ class robo 
 				Image im = image.getScaledInstance(w, h, Image.SCALE_SMOOTH);
+				// thu nho image lai voi kich thuoc = 1/2
 				image=cv(im);
+				// chuyen doi BufferefImage thành image
+				// do BufferefImage khong implements Serializable nen khong the gui duoc 
 				ImageIO.write(image, "png", s.getOutputStream());
+				// gui anh với luồng ra lấy từ socket 
 				try {
 					Thread.sleep(sleep);
 				} catch (Exception e) {

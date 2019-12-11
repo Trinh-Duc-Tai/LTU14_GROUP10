@@ -9,11 +9,8 @@ import java.rmi.RemoteException;
 
 import remote.Giaotiep;
 
+//lớp cài đặt rmi để thực hiện điều khiển 
 public class Rmi implements Giaotiep {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	Robot robo;
 	int h, w;
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -42,11 +39,13 @@ public class Rmi implements Giaotiep {
 		}
 	}
 
+	// thực hiện nhấn phím
 	public void keypress(int i) throws RemoteException {
 		if (run)
 			robo.keyPress(i);
 	}
 
+	// nha phim
 	public void keyReleased(int i) throws RemoteException {
 		// TODO Auto-generated method stub
 		if (run)
@@ -54,6 +53,7 @@ public class Rmi implements Giaotiep {
 
 	}
 
+	// viết 1 ký tự ra ngoài
 	public void type(int code) throws RemoteException {
 		// TODO Auto-generated method stub
 		if (run)
@@ -75,6 +75,9 @@ public class Rmi implements Giaotiep {
 
 	}
 
+	/**
+	 * lấy kích thước màn hình
+	 */
 	public int[] size() throws RemoteException {
 		int[] k = new int[2];
 		k[0] = w;
@@ -82,7 +85,11 @@ public class Rmi implements Giaotiep {
 		return k;
 	}
 
-	public void mouseclick(int a, int count) throws RemoteException {
+	public void mouseclick(int a) throws RemoteException {
+		/*
+		 * để thực hiện chính xác việc phím nào bị nhấn thì cần so sánh với các sự kiện
+		 * trong MouseEvent và lấy ra các sự kiện BUTTON_DOWN_MASK tương ứng
+		 */
 		if (run) {
 			if (a == MouseEvent.BUTTON1)
 				robo.mousePress(MouseEvent.BUTTON1_DOWN_MASK);
@@ -93,7 +100,7 @@ public class Rmi implements Giaotiep {
 		}
 	}
 
-	public void mouseReleased(int a, int count) throws RemoteException {
+	public void mouseReleased(int a) throws RemoteException {
 		if (run) {
 			if (a == MouseEvent.BUTTON1)
 				robo.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);
@@ -104,10 +111,4 @@ public class Rmi implements Giaotiep {
 		}
 	}
 
-	
-//	public void close() throws RemoteException {
-//		// TODO Auto-generated method stub
-//		run = false;
-//		System.out.println("close");
-//	}
 }

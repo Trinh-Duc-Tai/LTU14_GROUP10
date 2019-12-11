@@ -40,10 +40,13 @@ public class GetScreen implements Runnable {
 				if (s.getLocalAddress().getHostAddress() .equals(host)||host.equals("127.0.0.1") )
 				{
 					BufferedImage img = ImageIO.read(ImageIO.createImageInputStream(s.getInputStream()));
+					// nhận hình ảnh từ phía client qua Input Stream lấy từ socket  
 					image = img;
 					image = image.getScaledInstance(panel.getWidth(), panel.getHeight(), Image.SCALE_SMOOTH);
+					// dãn ảnh cho vừa màn hình 
 					Graphics graphics = panel.getGraphics();
 					graphics.drawImage(image, 0, 0, panel.getWidth(), panel.getHeight(), panel);
+					// vẽ ảnh trên khung hiển thị
 					graphics.dispose();
 				}
 				else

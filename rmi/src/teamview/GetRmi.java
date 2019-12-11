@@ -7,6 +7,11 @@ import remote.Giaotiep;
 
 public class GetRmi {
 
+	/**
+	 * lấy class rmi từ bên client 
+	 * @param s địa chỉ ip 
+	 * @return remote object 
+	 */
 	public static Giaotiep get(String s) {
 		try {
 			Registry registry;
@@ -15,7 +20,6 @@ public class GetRmi {
 			System.out.println("tao thanh cong");
 			return c;
 		} catch (Exception e) {
-			//e.printStackTrace();
 			return null ;
 		}
 	}

@@ -21,8 +21,6 @@ public class RMIServer {
 		init();
 		System.out.println(host);
 		Run();
-//		Thread.sleep(10000);
-//		stop();
 	}
 
 	public static void init() {
