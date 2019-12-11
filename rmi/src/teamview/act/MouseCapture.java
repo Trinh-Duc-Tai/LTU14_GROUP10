@@ -5,49 +5,53 @@ import java.awt.event.MouseListener;
 
 import remote.Giaotiep;
 
+// bắt các sự kiện click chuột 
 public class MouseCapture implements MouseListener {
-	Giaotiep gt ;
-	public MouseCapture(Giaotiep s)
-	{
-		gt=s; 
+	Giaotiep gt;
+	// class rmi dung để điều khiển
+
+	public MouseCapture(Giaotiep s) {
+		gt = s;
 	}
+
+	// bắt sự kiện nhấn chuột
 	public void mouseClicked(MouseEvent e) {
-	try {
-		gt.mouseReleased(e.getButton(), e.getClickCount());
-	} catch (Exception e2) {
-		e2.printStackTrace();	
+		try {
+			gt.mouseReleased(e.getButton());
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+
 	}
-	
-		
-	}
+
+	// bắt sự kiện nhả chuột
 	public void mouseReleased(MouseEvent e) {
 		try {
-			gt.mouseReleased(e.getButton(), e.getClickCount());
+			gt.mouseReleased(e.getButton());
 		} catch (Exception e2) {
-			e2.printStackTrace();	
+			e2.printStackTrace();
 		}
-		
+
 	}
+
+	// bắt sự kiện nhấn chuột
 	public void mousePressed(MouseEvent e) {
 		try {
-			gt.mouseclick(e.getButton(), e.getClickCount());
+			gt.mouseclick(e.getButton());
 		} catch (Exception e2) {
-			e2.printStackTrace();	
+			e2.printStackTrace();
 		}
 	}
+
 	public void mouseEntered(MouseEvent e) {
-		
-		//no thinh to do
-		
+
+		// khong can thiet
+
 	}
+
 	public void mouseExited(MouseEvent e) {
-		// do no thing
-		
+		// khong can thiet
+
 	}
-
-	
-	
-
-	
 
 }
