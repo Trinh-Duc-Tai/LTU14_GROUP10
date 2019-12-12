@@ -1,22 +1,8 @@
 ﻿# project-IT4883
-de tich hop code
-
-tren server goi new App(String s)  
-
-tren client goi Rmiserver
-
-cong rmi : 8888
-
-cong socket ket noi man hinh : 6677 
-link docker https://hub.docker.com/r/amneiht/11_rmi
-dockef file
-FROM java  
-#lay image java
-COPY rmi.jar /home
-# copy file rmi.jar vao docker
-RUN chmod +x /home/rmi.jar
-# cap quyen thuc thi 
-CMD ["java","-jar","/home/rmi.jar"]
-# chay cau lenh khi run docker
-
-
+chuong trinh team view sử dụng Java rmi và socket để thực hiện
+chạy trên java 8 hoặc java 11 
+sử dụng docker để thực chạy
+đường dẫn https://hub.docker.com/r/amneiht/11_rmi
+interface giao tiếp là class remote.Giaotiep chịu trách nhiêm thực hiện việc điều khiển máy client
+khi chạy thì tùy theo người dùng mà nó có thể là client hay server
+chạy trong mang lan , có thể chạy trên internet nhưng r
